@@ -167,22 +167,19 @@ No code was copied from any project below.
 
 **Inspired by**
 
-- [karpathy/llm-council](https://github.com/karpathy/llm-council): a local web app where several LLMs answer independently, review each other's answers anonymised ("Response A/B") so none can play favourites, and a chairman model writes the final answer (one review round). `consult` takes the anonymous cross-critique from there and extends it: three rounds in which the voices debate each other, three voices (Codex, Groq and the host Claude) and no fixed chairman. The repository is published as-is and has no license file, which is another reason no code is reused.
+- [karpathy/llm-council](https://github.com/karpathy/llm-council): a local web app where several LLMs answer independently, review each other's answers anonymised ("Response A/B") so none can play favourites, and a chairman model writes the final answer (one review round). `consult` takes the anonymous cross-critique from there and extends it: three rounds in which the voices debate each other, three voices (Codex, Groq and the host Claude) and no fixed chairman. The repository is published as-is and has no license file, another reason no code is reused.
+- [0xNyk/council-of-high-intelligence](https://github.com/0xNyk/council-of-high-intelligence) (MIT): structured deliberation where several analytical personas give independent first positions, are pushed to disagree directly, and a verdict is returned; it runs on Claude Code, Codex, Gemini CLI and OpenCode. What `consult` shares with it is the idea of a council of several voices that must disagree before a conclusion. The author considered it as a base and set it aside because of its token consumption, which matters on free tiers; `consult` uses plain voices (no personas) with a fixed, small number of calls.
+- [trailofbits/skills, plugin second-opinion](https://github.com/trailofbits/skills/tree/main/plugins/second-opinion): gets an independent review from other AI CLIs and reports findings without applying fixes; its Codex path runs `codex exec` in a read-only sandbox. It was used as a reference for calling Codex non-interactively with the prompt supplied from a file, which is how `consult` calls it. `second-opinion` reviews code changes with one outside model; `consult` debates open decisions among three voices.
 
-**Looked at while designing** (the exact influence is not claimed beyond what is stated)
+**Related work / looked at while designing**
 
-- [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) (Apache-2.0): OpenAI's plugin that runs Codex from Claude Code, including an adversarial review whose prompt says "Your job is to break confidence in the change, not to validate it" and "Default to skepticism", and ends in `needs-attention` or `approve`. The `attack` mode is written in that style and uses the same two verdicts.
-- [trailofbits/skills, plugin second-opinion](https://github.com/trailofbits/skills/tree/main/plugins/second-opinion): gets an independent review from other AI CLIs; its Codex path runs `codex exec` in a read-only sandbox. `consult` also runs Codex non-interactively and read-only.
-
-**Official prompting guides** used to tune the prompts: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) (explain the reason behind an instruction, put the query at the end of long inputs, say what to do rather than what not to do), [Google](https://aistudio.google.com/docs/prompting-strategies) (context first, the task last, consistent delimiters) and [OpenAI](https://developers.openai.com/api/docs/guides/prompt-engineering) (explicit instructions and roles, structured prompts, higher-level goals for reasoning models).
-
-**Related work** (similar goals; not a source of this project)
-
+- [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) (Apache-2.0): OpenAI's plugin that runs Codex from Claude Code, including an adversarial review whose prompt says "Your job is to break confidence in the change, not to validate it" and "Default to skepticism", ending in `needs-attention` or `approve`. The `attack` mode is written in a similar style and uses the same two verdicts.
 - [peteski22/star-chamber](https://github.com/peteski22/star-chamber): sends reviews and design questions to several LLM providers and groups findings by consensus; has a debate mode that feeds earlier-round feedback into the next round.
-- [0xNyk/council-of-high-intelligence](https://github.com/0xNyk/council-of-high-intelligence): structured multi-persona deliberation with independent first positions and forced disagreement.
 - [BeehiveInnovations/pal-mcp-server](https://github.com/BeehiveInnovations/pal-mcp-server): an MCP server that connects Claude Code and other CLIs to many models, with code-review, consensus and challenge style tools.
 - [ssh-den/council-debates](https://github.com/ssh-den/council-debates): Python package for role-based LLM debates with optional ranking and a chairman answer.
 - [hyperb1iss/hyperskills](https://github.com/hyperb1iss/hyperskills): a collection of agent skills that includes a cross-model review skill.
+
+**Official prompting guides** used to tune the prompts: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) (explain the reason behind an instruction, put the query at the end of long inputs, say what to do rather than what not to do), [Google](https://aistudio.google.com/docs/prompting-strategies) (context first, the task last, consistent delimiters) and [OpenAI](https://developers.openai.com/api/docs/guides/prompt-engineering) (explicit instructions and roles, structured prompts, higher-level goals for reasoning models).
 
 ## Contributing and license
 
