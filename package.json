@@ -1,0 +1,16 @@
+{
+  "name": "consult",
+  "version": "0.1.0",
+  "description": "Claude Code skill: blind, anonymous 3-round debate between Claude, Codex CLI and Groq.",
+  "type": "module",
+  "bin": { "consult": "consult.mjs" },
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test" },
+  "repository": { "type": "git", "url": "git+https://github.com/facunicedev/consult.git" },
+  "bugs": { "url": "https://github.com/facunicedev/consult/issues" },
+  "homepage": "https://github.com/facunicedev/consult#readme",
+  "keywords": ["claude-code", "skill", "codex", "groq", "llm", "debate"],
+  "license": "MIT",
+  "author": "facunicedev",
+  "private": true
+}

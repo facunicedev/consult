@@ -1,0 +1,12 @@
+{
+  "ais": ["codex", "groq"],
+  "outputDir": "./consult-output",
+  "codex": { "command": "codex" },
+  "groq": {
+    "model": "openai/gpt-oss-120b",
+    "maxOutputTokens": 2500,
+    "tokensPerMinute": 8000,
+    "tokensPerDay": 200000,
+    "retries": 4
+  }
+}
