@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. Bug reports, clearer docs and tests on macOS/Linux are especially welcome (see "What was tested" in the README).
+Thanks for helping. Please follow the [Code of Conduct](CODE_OF_CONDUCT.md). Bug reports, clearer docs and tests on macOS/Linux are especially welcome (see "What was tested" in the README).
 
 ## Setup
 

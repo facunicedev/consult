@@ -2,6 +2,10 @@
 
 A [Claude Code](https://docs.claude.com/en/docs/claude-code) skill that gets a second and third opinion before you decide. Claude, Codex CLI and a Groq-hosted model debate your question in **three blind, anonymous rounds**, and Claude closes with a reasoned recommendation. You decide.
 
+![consult demo: attack mode, from the question to the final answer](demo/consult-demo.gif)
+
+*Demo: the waiting is sped up (x12), the sub-agent clock runs x186 and the final answer is read quickly; the answer shown is from a real run. [Higher-quality MP4](demo/consult-demo.mp4).*
+
 ## What it is and why
 
 One model reviewing its own idea tends to agree with itself. `consult` puts three voices in a room where nobody knows who wrote what:
@@ -102,6 +106,8 @@ How the program stays inside the limits:
 
 ## Modes and usage
 
+In every mode the whole debate runs in **one background subagent**, so the rounds never fill your main chat: you only get the final summary.
+
 | Mode | Use when | Example |
 |---|---|---|
 | `attack` | You have a plan and want it broken | `/consult attack "We will store sessions in JWTs"` |
@@ -183,4 +189,4 @@ No code was copied from any project below.
 
 ## Contributing and license
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). Released under the [MIT License](LICENSE).
+See [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SECURITY.md](SECURITY.md). Released under the [MIT License](LICENSE).

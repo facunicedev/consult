@@ -4,3 +4,10 @@ consult-output/
 .env.*
 *.log
 .DS_Store
+
+# local notes and demo build files (only the final demo assets are published)
+.claude/
+PROGRESS.md
+demo/*
+!demo/consult-demo.gif
+!demo/consult-demo.mp4

@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/), versioning: [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- Demo GIF and MP4 in the README.
+- CODE_OF_CONDUCT.md.
+
+### Changed
+- SKILL.md: in every mode the debate runs in one background subagent, and the mode selector uses two AskUserQuestion steps.
+
 ## [0.1.0] - 2026-11-04
 
 ### Added
